@@ -10,11 +10,11 @@ example:
 
 GIven an xml file like this:
 
-![xml to be analyzed](promo-images/example-xml-duplicates.png\)
+[xml to be analyzed](promo-images/example-xml-duplicates.png\)
 
 By running the command 'Activate extent' in the command pallette, the extension responds with this message in the debug console:
 
-![duplicate result](promo-images/example-xml.png\)
+[duplicate result](promo-images/example-xml.png\)
 
 ## Requirements
 
