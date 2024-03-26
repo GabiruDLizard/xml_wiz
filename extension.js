@@ -20,20 +20,25 @@ function activate(context) {
 		var lastLine = activeEditor.document.lineAt(activeEditor.document.lineCount - 1);
 		var nrange = new vscode.Range(firstLine.range.start, lastLine.range.end);
 		var opp = new XmlWorker();
-		var res = opp.XMLoperater(activeEditor.document.getText(nrange));
-		xml2js.parseString(res, function (err, results) {
-			var recstr = new RecursorAgent();
-			recstr.duppyFinder(results);
-			if(recstr.duplicates.length > 0){
-				console.log('there are duplicates in this xml document:');
-				for(let i = 0; i < recstr.duplicates.length; i++){
-					console.log(recstr.duplicates[i]);
+		var res = opp.XMLoperater(activeEditor.document.getText(nrange)); 
+		if(res){
+			xml2js.parseString(res, function (err, results) {
+				var recstr = new RecursorAgent();
+				recstr.duppyFinder(results);
+				if(recstr.duplicates.length > 0){
+					console.log('there are duplicates in this xml document:');
+					for(let i = 0; i < recstr.duplicates.length; i++){
+						console.log(recstr.duplicates[i]);
+					}
 				}
-			}
-			else{
-				console.log('there are no duplicates in this xml');
-			}
-		});
+				else{
+					console.log('there are no duplicates in this xml');
+				}
+			});
+		}
+		else{
+			console.log("The xml file is not valid. Please check that there are no syntax errors.");
+		}
 	}
 
 	
