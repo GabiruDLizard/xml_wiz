@@ -1,65 +1,30 @@
-# helloworld-vs-ex README
+# XML Duplicate Finder
 
-This is the README for your extension "helloworld-vs-ex". After writing up a brief description, we recommend including the following sections.
+This extension locates duplicates in xml files and displays the duplicated xml nodes in the console.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension locates duplicates in xml files and displays the duplicated xml nodes in the console. Useful especially for huge xml or HTMl files and displays them in collapsed json format.
 
-For example if there is an image subfolder under your extension project workspace:
+example:
 
-\!\[feature X\]\(images/feature-x.png\)
+GIven an xml file like this:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\!\[xml to be analyzed\]\(promo-images/example-xml-duplicates.png\)
+
+By running the command 'Activate extent' in the command pallette, the extension responds with this message in the debug console:
+
+\!\[duplicate result\]\(promo-images/example-xml.png\)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- vscode 1.78.0 and up
+- macos, linux or windows
+- npm
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of XML_WIZ:
+This is my first extension. I made this to fix a personal and professional problem I kept having and to try my hand at something new. I will update and improve this as often as possible and especially if I missed something embarrassing.

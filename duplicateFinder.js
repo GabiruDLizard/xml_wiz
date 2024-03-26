@@ -1,3 +1,6 @@
+//Please pay this no mind. This file is depracated and I plan on removing it soon.
+
+
 const xmlQuery = require('xml-query');
 const XmlReader = require('xml-reader');
 
@@ -5,10 +8,12 @@ const XmlReader = require('xml-reader');
 const res = [];
 
 class duplicateFinder{
+    
     constructor(validXML){
         this.data = XmlReader.parseSync(validXML);
         this.map = new Map();
         this.res = [];
+        this.collectionstr = [];
     }
     lookatval(){
         xmlQuery(this.data).each(node => console.log(node.children.length));
@@ -40,6 +45,8 @@ class duplicateFinder{
     async iteraterBuddy(){
         await this.recurseBuddy(this.data);
         console.log(this.map);
+        this.fubbyMain();
+        
         // this.map.forEach(function(value, key) {
             
         //     if(value > 1){
@@ -54,6 +61,30 @@ class duplicateFinder{
         // // }
         // console.log(this.res);
     }
+    fubbyMain(){
+        console.log("im in fubby main now");
+        for(const property in this.map){
+            var str = "";
+            this.fubby(property, str);
+            console.log("sent");
+        }
+    }
+    fubby(maps, strs){
+        for(key in maps) {
+            if(key.type == 'element'){
+                strs = strs + key.name;
+                console.log(strs);
+                fubby(key.children, strs);
+            }
+            else if(key.type == 'text'){
+                strs = strs + key.value;
+                console.log(strs);
+            }
+        }
+    }
 
 }
+
+
+
 module.exports = duplicateFinder;
