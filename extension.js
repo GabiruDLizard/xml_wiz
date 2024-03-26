@@ -37,7 +37,7 @@ function activate(context) {
 	}
 
 	
-	let disposable = vscode.commands.registerCommand('helloworld-vs-ex.helloWorld', function () {
+	let disposable = vscode.commands.registerCommand('xml-wiz-ext.XML_WIZ', function () {
 		vscode.window.showInformationMessage('searching for duplicates :)');
 	});
 

@@ -1,6 +1,6 @@
 {
-  "name": "helloworld-vs-ex",
-  "displayName": "helloworld vs ex",
+  "name": "XML_WIZ",
+  "displayName": "XML Wiz",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,7 +14,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "helloworld-vs-ex.helloWorld",
+        "command": "xml-wiz-ext.XML_WIZ",
         "title": "Activate extent"
       }
     ]
