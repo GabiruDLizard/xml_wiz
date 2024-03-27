@@ -3,12 +3,23 @@
   "displayName": "XML Wiz",
   "description": "",
   "version": "0.0.1",
+  "publisher": "kendrickknowles",
   "engines": {
     "vscode": "^1.78.0"
   },
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "xml",
+    "xml duplicates",
+    "duplicate xml",
+    "duplicate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabiruDLizard/xml_wiz.git"
+  },
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
