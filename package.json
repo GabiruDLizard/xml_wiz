@@ -2,7 +2,7 @@
   "name": "xml-wiz",
   "displayName": "XML Wiz",
   "description": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "kendrickknowles",
   "engines": {
     "vscode": "^1.78.0"
