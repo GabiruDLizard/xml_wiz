@@ -4,6 +4,7 @@
   "description": "",
   "version": "1.0.0",
   "publisher": "kendrickknowles",
+  "ci-build": "npx tsc",
   "engines": {
     "vscode": "^1.78.0"
   },
@@ -57,4 +58,5 @@
     "xml2js": "^0.6.2",
     "xml2json": "^0.12.0"
   }
+
 }

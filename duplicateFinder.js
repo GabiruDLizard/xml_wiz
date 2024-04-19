@@ -1,4 +1,7 @@
-//Please pay this no mind. This file is depracated and I plan on removing it soon.
+/*Please pay this no mind. This file is depracated and I plan on removing it soon.
+....................Deprecated File..Deprecated File..Deprecated File.............
+............Deprecated File..Deprecated File..Deprecated File..Deprecated File....
+*/
 
 
 const xmlQuery = require('xml-query');

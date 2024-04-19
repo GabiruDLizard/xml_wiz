@@ -10,11 +10,11 @@ example:
 
 GIven an xml file like this:
 
-<img src="promo-images/example-xml.png"/>
+<img src="promo-images/example-xml2.png"/>
 
-By running the command 'Activate extent' in the command pallette, the extension responds with this message in the debug console:
+By running the command 'Activate extent' in the command pallette, the extension responds with this message in a new webview window:
 
-<img src="promo-images/example-xml-duplicates.png"/>
+<img src="promo-images/example-xml-results.png"/>
 
 ## Requirements
 
