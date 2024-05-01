@@ -12,10 +12,11 @@ const deepflat = require('x-deep-flatten-object')
     duppyFinder(results){
         //flatten the json object
         const flattenedObject = deepflat.xDeepFlattenObject(results);
-        console.log(flattenedObject); 
+        //sconsole.log(flattenedObject); 
         //loop through the flattened object and replaceelements that would make it confusing to read, 
         //then check for duplicates and store them in the duplicates array
         for(let obj in flattenedObject){
+            console.log(obj + " " + flattenedObject[obj]);
             let pap = "";
             pap = JSON.stringify(obj)
             //console.log(pap);
