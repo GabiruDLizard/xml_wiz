@@ -14,7 +14,7 @@ GIven an xml file like this:
 
 By running the command 'Activate extent' in the command pallette, the extension responds with this message in a new webview window:
 
-<img src="promo-images/example-xml-results.png"/>
+<img src="promo-images/example-xmlresults.png"/>
 
 ## Requirements
 
