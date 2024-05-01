@@ -76,9 +76,36 @@ async function activate(context) {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>Cat Coding</title>
 		</head>
+		<style>
+		body
+		{
+			background-color: black;
+			opacity: 0.5;
+		}
+		
+		div.transbox 
+		{
+		  margin: 30px;
+		  background-color: #ffffff;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p 
+		{
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #000000;
+		}
+
+		</style>
 		<body>
-			<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+		<div class="transbox">
+			<!--<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />-->
+			
 			<p>${dupres}</p>
+		</div>
+		
 		</body>
 		</html>`;
 	}
