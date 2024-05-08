@@ -43,10 +43,11 @@ async function activate(context) {
 						console.log('there are duplicates in this xml document:');
 						dupres = 'there are duplicates in this xml document:';
 						for(let i = 0; i < recstr.duplicates.length; i++){
-							dupres = dupres + '<br>' + recstr.duplicates[i];
+							dupres = dupres + '\r\n' + recstr.duplicates[i];
 							//console.log(recstr.duplicates[i]);
 						}
 						//console.log(dupres);
+
 					}
 					else{
 						//console.log('there are no duplicates in this xml');
@@ -68,6 +69,10 @@ async function activate(context) {
 		vscode.window.createWebviewPanel('xml-Wiz', 'Xml Duplicates', vscode.ViewColumn.One, {}).webview.html = getWebViewContent();
 	})
 
+	let disposableOther = vscode.commands.registerCommand('xml-wiz-ext.XML_WIZ_WHOLE', function (){
+		
+	})
+
 	function getWebViewContent(){
 		return `<!DOCTYPE html>
 		<html lang="en">
@@ -86,7 +91,7 @@ async function activate(context) {
 		div.transbox 
 		{
 		  margin: 30px;
-		  background-color: #ffffff;
+		  background-color: white;
 		  border: 1px solid black;
 		  opacity: 0.6;
 		}
@@ -95,15 +100,15 @@ async function activate(context) {
 		{
 		  margin: 5%;
 		  font-weight: bold;
-		  color: #000000;
+		  color: white;
 		}
 
 		</style>
 		<body>
-		<div class="transbox">
+		<div>
 			<!--<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />-->
 			
-			<p>${dupres}</p>
+			<p><xmp>${dupres}</xmp></p>
 		</div>
 		
 		</body>
@@ -122,7 +127,7 @@ async function activate(context) {
 		// </html>`;
 	}
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable, disposableOther);
 }
 
 function deactivate() {}

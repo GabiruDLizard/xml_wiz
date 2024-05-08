@@ -2,7 +2,7 @@
   "name": "xml-duplicate-finder",
   "displayName": "XML DUPLICATE FINDER",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "kendrickknowles",
   "ci-build": "npx tsc",
   "engines": {
@@ -28,6 +28,10 @@
       {
         "command": "xml-wiz-ext.XML_WIZ",
         "title": "Activate extent"
+      },
+      {
+        "command": "xml-wiz-ext.XML_WIZ_WHOLE",
+        "title": "Activate extent whole"
       }
     ]
   },
