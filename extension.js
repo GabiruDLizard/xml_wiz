@@ -57,7 +57,7 @@ async function activate(context) {
 			}
 			else{
 				console.log("The file is either not a valid xml file or not one at all.");
-				dupres = "The file is either not a valid xml file or not one at all." + res;
+				dupres = "The file is either not a valid xml file or not one at all." + res.message;
 			}
 		}
 	}

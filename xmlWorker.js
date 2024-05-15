@@ -18,12 +18,12 @@ class XmlWorker{
 
     XMLoperater(words){
         const xmlcontent = this.validateXML(words);
-        if(xmlcontent == true){
+        if(xmlcontent){
             return words;
         }
         else{
             console.log(xmlcontent);
-            return false;
+            return xmlcontent;
         }
     }
 }
