@@ -25,7 +25,7 @@ const deepflat = require('x-deep-flatten-object')
             let num = pap.match(/\d+/g);
             let nums = '';
             for(let n in num){
-                nums = nums + ',' + n;
+                nums = nums + ',' + num[n];
             }
             if(nums == befnums){
                 pap = this.duppyClean(pap);
