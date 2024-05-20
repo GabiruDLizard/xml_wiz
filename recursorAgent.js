@@ -24,9 +24,22 @@ const deepflat = require('x-deep-flatten-object')
             pap = JSON.stringify(obj);
             let num = pap.match(/\d+/g);
             let nums = '';
-            for(let n in num){
+            if(num.length > 1){
+                for(let n = 0; n < num.length - 1; n++){
+                    nums = nums + ',' + num[n];
+                }
+            }
+            else{
+                for(let n in num){
+                    nums = nums + ',' + num[n];
+                }
+            }
+            for(let n = 0; n < num.length - 1; n++){
                 nums = nums + ',' + num[n];
             }
+            console.log("nums: " + nums);
+            console.log("befnums: " + befnums);
+
             if(nums == befnums){
                 pap = this.duppyClean(pap);
                 pap2 = pap2 + "\n" + pap + " " + JSON.stringify(flattenedObject[obj]);
