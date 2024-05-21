@@ -25,15 +25,13 @@ const deepflat = require('x-deep-flatten-object')
             let num = pap.match(/\d+/g);
             let nums = '';
             
-            if(num.length > 1){
+            if(num != null && num.length > 1){
                 for(let n = 0; n < num.length - 1; n++){
                     nums = nums + ',' + num[n];
                 }
             }
-            else{
-                for(let n in num){
-                    nums = nums + ',' + num[n];
-                }
+            else if(num != null && num.length == 1){
+                    nums = nums + ',' + num[1];
             }
             console.log("nums: " + nums);
             console.log("befnums: " + befnums);
