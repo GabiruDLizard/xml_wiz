@@ -17,6 +17,15 @@ By running the command 'Activate extent' in the command pallette, the extension 
 
 <img src="promo-images/example-xmlduplicates-4.png"/>
 
+Given an xml file like this:
+
+<img src="promo-images/activateextentwhole1.png"/>
+<img src="promo-images/activateextentwhole2.png"/>
+
+By running the command Activate extent whole, you will be prompted with a text entry window to give the name of the tag you want to duplicate search based off of. I gave the prompt 'Name' this is the result.
+
+<img src="promo-images/activateextentwholeres.png"/>
+
 ## Requirements
 
 - vscode 1.78.0 and up
@@ -24,6 +33,11 @@ By running the command 'Activate extent' in the command pallette, the extension 
 - npm
 
 ## Release Notes
+
+### 1.0.9
+
+Ninth Release of XML_WIZ:
+Now we add an option to search based on a single attribute.
 
 ### 1.0.0
 

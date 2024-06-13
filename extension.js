@@ -4,6 +4,7 @@
 let vscode = require('vscode')
 const XmlWorker = require('./xmlWorker');
 const RecursorAgent = require('./recursorAgent');
+const ExtendedDupSearch = require('./extendedDuplicateSearch');
 const xml2js = require('xml2js');
 
 /**
@@ -11,7 +12,7 @@ const xml2js = require('xml2js');
  */
 async function activate(context) {
 	let dupres = "";
-	function activationActions(){
+	function activationActions(vss){
 		//grabs the context of the current testeditor open
 		const activeEditor = vscode.window.activeTextEditor;
 
@@ -35,8 +36,15 @@ async function activate(context) {
 				//if xml content is valid parse into json format and look for duplicates
 				xml2js.parseString(res, function (err, results) {
 					//initialize RecursorAgent object and send the json results to the duppyfinder method 
-					var recstr = new RecursorAgent();
-					recstr.duppyFinder(results);
+					let recstr = '';
+					if(vss == ''){
+						recstr = new RecursorAgent();
+						recstr.duppyFinder(results);
+					}
+					else{
+						recstr = new ExtendedDupSearch(vss);
+						recstr.duppyFinder(results);
+					}
 
 					//if there are duplicates they are made as a string in the dupres variable
 					if(recstr.duplicates.length > 0){
@@ -64,13 +72,26 @@ async function activate(context) {
 
 	
 	let disposable = vscode.commands.registerCommand('xml-wiz-ext.XML_WIZ', function () {
-		activationActions();
+		activationActions('');
 		vscode.window.showInformationMessage('searching for duplicates :)');
 		vscode.window.createWebviewPanel('xml-Wiz', 'Xml Duplicates', vscode.ViewColumn.One, {}).webview.html = getWebViewContent();
 	})
 
-	let disposableOther = vscode.commands.registerCommand('xml-wiz-ext.XML_WIZ_WHOLE', function (){
-		
+	let disposableOther = vscode.commands.registerCommand('xml-wiz-ext.XML_WIZ_WHOLE', async function (){
+		const searchQuery = await vscode.window.showInputBox({
+			placeHolder: "Search query",
+			prompt: "Please enter the tag whose value you want to find a node with the same of.",
+			
+		  });
+		if(searchQuery != ''){
+			activationActions(searchQuery);
+			vscode.window.showInformationMessage('searching for duplicates nodes that have the same value in the tag named ' + searchQuery);
+			vscode.window.createWebviewPanel('xml-Wiz', 'Xml Duplicates', vscode.ViewColumn.One, {}).webview.html = getWebViewContent();
+		}
+		else if(searchQuery === ''){
+			console.log(searchQuery);
+			vscode.window.showErrorMessage('A search query is mandatory to execute this action');
+		  }
 	})
 
 	function getWebViewContent(){
